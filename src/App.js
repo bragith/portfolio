@@ -5,8 +5,9 @@ import Header from './components/header';
 import Me from './components/me';
 import Projects from './components/projects';
 import Skills from './components/skills';
-import You from './components/you';
+import Contact from './components/contact';
 import Frontpage from './components/frontpage';
+import ScrollToTop from './components/scrollToTop';
 
 class App extends Component {
   render() {
@@ -15,9 +16,10 @@ class App extends Component {
         <Header />
         <Frontpage />
         <Me />
-        <Projects />
         <Skills />
-        <You />
+        <Projects />
+        <Contact />
+        <ScrollToTop />
       </div>
     );
   }

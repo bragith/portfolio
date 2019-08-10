@@ -1,0 +1,25 @@
+#frontPage {
+  background-color: aquamarine;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  h1 {
+    font-size: 6rem;
+  }
+  p {
+    font-size: 40px;
+  }
+  #imgContainer {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    align-self: flex-end;
+    padding-right: 50px;
+    img {
+      height: calc(100vh - 350px);
+      width: auto;
+      object-fit: contain;
+    }
+  }
+}

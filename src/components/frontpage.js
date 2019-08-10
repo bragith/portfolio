@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
-
+import manImg from '../resources/images/man.png';
 const Frontpage = () => (
-  <div id="frontPage" className="content">
-    <h2>I am</h2>
-    <h1>Bragi Þorsteinsson</h1>
-  </div>
+  <section id="frontPage" className="content">
+    <header>
+      <p>I am</p>
+      <h1>Bragi Þorsteinsson</h1>
+    </header>
+    <div id="imgContainer">
+      <img src={manImg} alt="Me" />
+    </div>
+  </section>
 );
 
 export default Frontpage;
