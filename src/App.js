@@ -8,12 +8,14 @@ import Skills from './components/skills';
 import Contact from './components/contact';
 import Frontpage from './components/frontpage';
 import ScrollToTop from './components/scrollToTop';
+import BurgerMenu from './components/BurgerMenu/burgerMenu';
 
 class App extends Component {
   render() {
     return (
       <div id="wrapper">
-        <Header />
+        {/* <Header /> */}
+        <BurgerMenu />
         <Frontpage />
         <Me />
         <Skills />

@@ -1,25 +1,86 @@
 #frontPage {
-  background-color: aquamarine;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  position: relative;
   h1 {
-    font-size: 6rem;
+    font-size: 1.5rem;
+    max-width: 600px;
+    line-height: 2rem;
+    span {
+      color: $green;
+      font-weight: bold;
+    }
   }
   p {
     font-size: 40px;
   }
+
   #imgContainer {
     display: flex;
-    justify-content: center;
-    flex-grow: 1;
-    align-self: flex-end;
-    padding-right: 50px;
+    position: relative;
+    height: 100%;
     img {
-      height: calc(100vh - 350px);
+      position: relative;
+      height: 100%;
       width: auto;
       object-fit: contain;
+      margin-left: auto;
     }
+  }
+}
+
+.scrollDown {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 60px;
+  min-width: 100px;
+  z-index: 99;
+  span {
+    //display: inline-block;
+    height: 3px;
+    width: 60px;
+    background-color: black;
+    border-radius: 1.5px;
+    &:nth-child(1) {
+      transform: rotate(30deg);
+      margin-right: -4.5px;
+    }
+    &:nth-child(2) {
+      transform: rotate(-30deg);
+      margin-left: -4.5px;
+    }
+  }
+  &:hover {
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    span {
+      color: red;
+    }
+  }
+}
+
+@keyframes bounce {
+  0% {
+    bottom: 30px;
+  }
+  25% {
+    bottom: 50px;
+  }
+  50% {
+    bottom: 30px;
+  }
+  75% {
+    bottom: 40px;
+  }
+  100% {
+    bottom: 30px;
   }
 }

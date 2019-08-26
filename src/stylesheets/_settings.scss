@@ -1,1 +1,62 @@
+/***********************
+	*Mixins
+	*Includes
+	*Variables
+		-Fonts
+		-Colors
+	*Defaults
+***********************/
+
+//Mixins
+//----------------------
+@mixin google-font($family) {
+  @import url('http://fonts.googleapis.com/css?family=#{$family}');
+}
+
+//Includes
+//----------------------
+@include google-font('Montserrat:400,600,700&display=swap');
+
+//Variables
+//----------------------
+
+//Fonts
+$Montserrati: 'Montserrat', sans-serif;
+
+//Colors
 $bob: red;
+$green: #00bf7c;
+
+//Defaults
+//----------------------
+#wrapper {
+  overflow: hidden;
+  position: relative;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: $Montserrati;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 32px;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 24px;
+}
+
+.content {
+  padding: 100px;
+}
