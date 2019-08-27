@@ -9,10 +9,6 @@ import ScrollToTop from './components/scrollToTop';
 import BurgerMenu from './components/BurgerMenu/burgerMenu';
 
 class App extends Component {
-  componentDidMount() {
-    window.addEventListener('');
-  }
-
   render() {
     return (
       <div id="wrapper">

@@ -1,8 +1,61 @@
 #skills {
-  background-color: burlywood;
   display: flex;
-  .left,
-  .right {
-    width: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.skillWrapper {
+  height: 490px;
+  width: 250px;
+  background-image: linear-gradient(to right, #b4b4b4, #d4d4d4);
+  position: relative;
+  margin: 0 50px;
+  padding-top: 10px;
+  .skillTitleWrapper {
+    position: relative;
+    display: flex;
+    $baseColor: #376092;
+    $shadowColor: #254061;
+    .skillTitle {
+      width: 80%;
+      color: white;
+      background-color: $green;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 30px;
+      margin-left: -20px;
+    }
+    .triangle {
+      $border: 15px;
+      &Upper,
+      &Lower {
+        height: 0;
+        width: 0;
+        border-right: $border solid transparent;
+      }
+      &Upper {
+        border-top: $border solid $green;
+      }
+      &Lower {
+        border-bottom: $border solid $green;
+      }
+      &Bottom {
+        position: absolute;
+        bottom: -20px;
+        left: -20px;
+        height: 0;
+        width: 0;
+        border-left: 20px solid transparent;
+        border-top: 20px solid darken($green, 15%);
+      }
+    }
+  }
+  .elementsWrapper {
+    padding: 20px;
+    .element {
+      font-weight: $fw-semi;
+      margin-bottom: 5px;
+    }
   }
 }
