@@ -35,10 +35,12 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="content">
-      <SkillCategorie categorie={skillSet1} />
-      <SkillCategorie categorie={skillSet2} />
-      <SkillCategorie categorie={skillSet3} />
+    <section id="skills">
+      <div className="content">
+        <SkillCategorie categorie={skillSet1} />
+        <SkillCategorie categorie={skillSet2} />
+        <SkillCategorie categorie={skillSet3} />
+      </div>
     </section>
   );
 };
@@ -51,12 +53,9 @@ const SkillCategorie = ({ categorie }) => {
         <div key={i} className="skillCategory">
           <div className="skillTitleWrapper">
             <h3 className="skillTitle">{categorie.title}</h3>
-            <div>
-              <div className="triangleUpper" />
-              <div className="triangleLower" />
-            </div>
-            <div className="triangleBottom" />
           </div>
+          <div className="foldLeft" />
+          <div className="foldRight" />
 
           <ul className="elementsWrapper">
             {categorie.elements.map((element, i) => (

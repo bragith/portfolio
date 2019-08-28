@@ -15,8 +15,8 @@ class App extends Component {
         {/* <Header /> */}
         <BurgerMenu />
         <Frontpage />
-        <Skills />
         <Me />
+        <Skills />
         <Projects />
         <Contact />
         <ScrollToTop />

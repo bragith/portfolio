@@ -20,29 +20,21 @@
 //Variables
 //----------------------
 
-//Fonts
+//Text
 $Montserrati: 'Montserrat', sans-serif;
 
 $fw-regular: 400;
 $fw-semi: 600;
 $fw-bold: 700;
 
-//Colors
-$green: #00bf7c;
-
-//Defaults
-//----------------------
-#wrapper {
-  overflow: hidden;
-  position: relative;
-}
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-p {
+p,
+a {
   font-family: $Montserrati;
 }
 
@@ -58,8 +50,37 @@ h2 {
 p {
   font-size: 1rem;
   margin-bottom: 24px;
+  line-height: 1.2rem;
+}
+
+//Colors
+$green: #00bf7c;
+
+//Defaults
+//----------------------
+#wrapper {
+  overflow: hidden;
+  position: relative;
 }
 
 .content {
-  padding: 100px;
+  position: relative;
+  display: flex;
+  padding: 50px;
+  margin: 0 auto;
+  &.contained {
+    height: calc(100vh - 100px);
+    max-width: 1200px;
+  }
+}
+
+.button {
+  padding: 10px 20px;
+  border: thick solid $green;
+  color: white;
+  text-decoration: none;
+  transition: 0.5s;
+  &:hover {
+    background-color: $green;
+  }
 }

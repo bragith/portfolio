@@ -6,30 +6,6 @@
 @import 'stylesheets/projects';
 @import 'stylesheets/contact';
 
-#frontPage,
-#me,
-#projects,
-#skills,
-#contact {
-  position: relative;
-  height: calc(100vh - 200px);
-}
-
-#frontPage,
-#me,
-#projects,
-#skills {
-  &::after {
-    content: '';
-    width: 80%;
-    height: 1px;
-    background-color: black;
-    margin: 0 auto;
-    position: absolute;
-    bottom: 0;
-  }
-}
-
 #scrollToTop {
   position: fixed;
   bottom: -60px;

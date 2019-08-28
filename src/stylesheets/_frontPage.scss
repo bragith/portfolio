@@ -1,9 +1,10 @@
 #frontPage {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  position: relative;
+  .content {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+  }
   h1 {
     font-size: 1.5rem;
     max-width: 600px;

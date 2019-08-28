@@ -1,61 +1,82 @@
 #skills {
+  margin-top: -250px;
   display: flex;
   justify-content: center;
   align-items: center;
+  .content {
+    background-color: white;
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .skillWrapper {
-  height: 490px;
+  // height: 490px;
   width: 250px;
-  background-image: linear-gradient(to right, #b4b4b4, #d4d4d4);
-  position: relative;
+  // background-image: linear-gradient(to right, #b4b4b4, #d4d4d4);
   margin: 0 50px;
-  padding-top: 10px;
+  // padding-top: 10px;
+  .skillCategory {
+    position: relative;
+    margin-bottom: 25px;
+  }
   .skillTitleWrapper {
     position: relative;
-    display: flex;
-    $baseColor: #376092;
-    $shadowColor: #254061;
     .skillTitle {
-      width: 80%;
-      color: white;
-      background-color: $green;
       display: flex;
       justify-content: center;
       align-items: center;
+      position: relative;
+      z-index: 1;
+      width: calc(100% + 40px);
       height: 30px;
       margin-left: -20px;
+      background-color: $green;
+      border-radius: 15px;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+      color: white;
+      font-weight: $fw-semi;
+      font-size: 18px;
+      background-image: linear-gradient(
+        to right,
+        darken($green, 15%) 10%,
+        $green,
+        darken($green, 15%) 10%
+      );
     }
-    .triangle {
-      $border: 15px;
-      &Upper,
-      &Lower {
-        height: 0;
-        width: 0;
-        border-right: $border solid transparent;
-      }
-      &Upper {
-        border-top: $border solid $green;
-      }
-      &Lower {
-        border-bottom: $border solid $green;
-      }
-      &Bottom {
-        position: absolute;
-        bottom: -20px;
-        left: -20px;
-        height: 0;
-        width: 0;
-        border-left: 20px solid transparent;
-        border-top: 20px solid darken($green, 15%);
-      }
+  }
+  .fold {
+    &Right,
+    &Left {
+      height: 30px;
+      width: 100px;
+      position: absolute;
+      background-color: darken($green, 15%);
+      border-radius: 15px;
+    }
+    &Left {
+      top: 25px;
+      left: -30px;
+      transform: rotate(45deg);
+    }
+    &Right {
+      top: 25px;
+      right: -30px;
+      transform: rotate(-45deg);
     }
   }
   .elementsWrapper {
-    padding: 20px;
+    position: relative;
+    padding: 60px 20px 20px;
+    margin-top: -40px;
+    width: 210px;
+    background-image: linear-gradient(to bottom, #b4b4b4, #fff);
+    border-radius: 5px;
     .element {
-      font-weight: $fw-semi;
-      margin-bottom: 5px;
+      margin-bottom: 20px;
+      text-align: center;
     }
   }
 }
