@@ -19,9 +19,8 @@ const BurgerMenu = () => {
       </div>
       <nav className={`mainNav${isOpen ? ' show' : ''}`}>
         <ul>
-          <li>Me</li>
           <li>Skills</li>
-          <li>Projects</li>
+          <li>Work</li>
           <li>Contact</li>
         </ul>
       </nav>

@@ -1,3 +1,5 @@
+@import '../../stylesheets/settings';
+
 .burgerWrapper {
   z-index: 99;
   position: fixed;
@@ -8,7 +10,7 @@
 //Burger Icon
 .iconWrapper {
   width: 45px;
-  min-height: 30px;
+  min-height: 38px;
   position: relative;
   z-index: 1;
   cursor: pointer;
@@ -75,25 +77,32 @@
 //Burger nav
 .mainNav {
   position: absolute;
-  background-color: black;
-  right: -275px;
-  top: -25px;
-  transition: right 0.5s;
+  background-color: $green;
+  overflow: hidden;
+  right: -10px;
+  top: -8px;
+  border-radius: 30px;
   &.show {
-    right: -25px;
-    transition: right 0.5s;
+    ul {
+      width: 500px;
+      transition: width 0.5s;
+    }
   }
   ul {
-    height: 500px;
-    width: 250px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 0px;
+    transition: width 0.5s;
     li {
-      padding-left: 50px;
+      margin: 0 25px;
       font-size: 24px;
-      margin-bottom: 16px;
       color: white;
+      cursor: pointer;
+      transition: color 0.25s;
+      &:hover {
+        color: black;
+      }
     }
   }
 }

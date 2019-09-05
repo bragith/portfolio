@@ -1,35 +1,33 @@
 import React, { Component } from 'react';
 import festenImg from '../resources/images/festen-logo.svg';
-import arabesqueImg from '../resources/images/arabesque-logo.png';
+import arabesqueImg from '../resources/images/arabesque-logo.jpg';
 
 const projects = [
   {
     title: 'Festen.dk',
     img: festenImg,
-    description:
-      'E-commerce and service platform with everything you need to thow the party of your life',
+    tags: ['React.js'],
     link: 'www.festen.dk',
     color: '#619e98'
   },
   {
     title: 'Arabesque',
     img: arabesqueImg,
-    description: 'Dance courses for kids in all age groups',
+    tags: ['WordPress'],
     link: 'www.arabesque.is',
     color: '#df2176'
   },
   {
     title: 'Festen.dk',
     img: festenImg,
-    description:
-      'E-commerce and service platform with everything you need to thow the party of your life',
+    tags: ['React.js'],
     link: 'www.festen.dk',
     color: '#619e98'
   },
   {
     title: 'Arabesque',
     img: arabesqueImg,
-    description: 'Dance courses for kids in all age groups',
+    tags: ['WordPress'],
     link: 'www.arabesque.is',
     color: '#df2176'
   }
@@ -39,15 +37,18 @@ const Projects = () => {
   return (
     <section id="projects">
       <div className="content">
-        {projects.map((project, i) => (
-          <Project key={i} project={project} />
-        ))}
+        <h1>Work</h1>
+        <div className="projectsWrapper">
+          {projects.map((project, i) => (
+            <Project key={i} project={project} />
+          ))}
+        </div>
       </div>
     </section>
   );
 };
 
-const Project = ({ project: { title, img, description, link, color } }) => {
+const Project = ({ project: { title, img, tags, link, color } }) => {
   console.log(img);
 
   return (
@@ -55,7 +56,11 @@ const Project = ({ project: { title, img, description, link, color } }) => {
       <img src={img} alt={title} />
       <figcaption>
         <h3>{title}</h3>
-        <p>{description}</p>
+        <ul>
+          {tags.map((tag, i) => (
+            <li key={i}>{tag}</li>
+          ))}
+        </ul>
         <a className="button" href={link}>
           Visit Website >
         </a>
