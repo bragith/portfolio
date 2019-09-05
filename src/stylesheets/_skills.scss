@@ -37,14 +37,36 @@
     .skillCategory {
       margin-bottom: 25px;
     }
-    .skillTitle {
-      color: $green;
-      font-weight: $fw-bold;
-      margin-bottom: 7px;
-      font-size: 22px;
-    }
     .element {
       line-height: 30px;
+    }
+  }
+  .skillTitle {
+    color: $green;
+    font-weight: $fw-bold;
+    margin-bottom: 7px;
+    font-size: 22px;
+  }
+}
+
+@include mediaTablet {
+  #skills {
+    .content {
+      margin: 0 15px;
+    }
+  }
+}
+
+@include mediaPhone {
+  #skills {
+    .content {
+      margin: 0 10px;
+    }
+  }
+  .skillSetWrapper {
+    .skillTitle {
+      font-size: 18px;
+      word-break: break-word;
     }
   }
 }

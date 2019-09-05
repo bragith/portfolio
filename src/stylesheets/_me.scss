@@ -19,3 +19,14 @@
     max-width: 800px;
   }
 }
+
+@include mediaPhone {
+  #me {
+    h2 {
+      font-size: 1.8rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+}

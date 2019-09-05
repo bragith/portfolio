@@ -106,3 +106,17 @@
     }
   }
 }
+
+@include mediaTablet {
+  .mainNav {
+    &.show {
+      ul {
+        width: calc(100vw - 30px);
+        li {
+          font-size: 18px;
+          margin: 0 20px;
+        }
+      }
+    }
+  }
+}

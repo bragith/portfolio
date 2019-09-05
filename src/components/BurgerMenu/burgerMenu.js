@@ -19,9 +19,15 @@ const BurgerMenu = () => {
       </div>
       <nav className={`mainNav${isOpen ? ' show' : ''}`}>
         <ul>
-          <li>Skills</li>
-          <li>Work</li>
-          <li>Contact</li>
+          <li>
+            <a href="#skills">Skills</a>
+          </li>
+          <li>
+            <a href="#projects">Work</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
         </ul>
       </nav>
     </div>

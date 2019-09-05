@@ -29,15 +29,15 @@ const Skills = () => {
   ];
   const skillSet1 = [
     {
-      title: 'HTML(5)',
+      title: 'HTML (5)',
       elements: ['Semantic Markup']
     },
     {
-      title: 'CSS(3)',
+      title: 'CSS (3)',
       elements: ['Animations', 'Sass', 'Less', 'Bootstrap', 'Foundation']
     },
     {
-      title: 'JavaScript(ES6)',
+      title: 'JavaScript (ES6)',
       elements: ['React', 'jQuery', 'Redux', 'Knockout', 'NPM']
     }
   ];
@@ -49,7 +49,7 @@ const Skills = () => {
     },
     {
       title: 'Backend',
-      elements: ['SQL', 'Relational Databases']
+      elements: ['SQL', 'Relational-Databases']
     },
     {
       title: 'Design',

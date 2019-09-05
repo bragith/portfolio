@@ -1,9 +1,8 @@
 /***********************
 	*Mixins
 	*Includes
-	*Variables
-		-Fonts
-		-Colors
+	*Text
+	*Colors
 	*Defaults
 ***********************/
 
@@ -13,14 +12,26 @@
   @import url('http://fonts.googleapis.com/css?family=#{$family}');
 }
 
+//Tablet media Query
+@mixin mediaTablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+//Phone
+@mixin mediaPhone {
+  @media screen and (max-width: 640px) {
+    @content;
+  }
+}
+
 //Includes
 //----------------------
 @include google-font('Montserrat:400,600,700&display=swap');
 
-//Variables
-//----------------------
-
 //Text
+//----------------------
 $Montserrati: 'Montserrat', sans-serif;
 
 $fw-regular: 400;
@@ -53,7 +64,13 @@ p {
   line-height: 1.2rem;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 //Colors
+//----------------------
 $green: #00bf7c;
 
 //Defaults
@@ -83,5 +100,17 @@ $green: #00bf7c;
   border-radius: 22px;
   &:hover {
     background-color: $green;
+  }
+}
+
+@include mediaTablet {
+  .content {
+    padding: 50px 30px;
+  }
+}
+
+@include mediaPhone {
+  .content {
+    padding: 50px 10px;
   }
 }

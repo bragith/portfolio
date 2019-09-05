@@ -16,6 +16,7 @@
   }
   p {
     font-size: 40px;
+    line-height: unset;
   }
 
   #imgContainer {
@@ -83,5 +84,31 @@
   }
   100% {
     bottom: 30px;
+  }
+}
+
+@include mediaTablet {
+  #frontPage {
+    .content {
+      flex-direction: column;
+      justify-content: center;
+    }
+    #imgContainer {
+      height: 200px;
+      width: 200px;
+      border-radius: 100px;
+      overflow: hidden;
+      background-color: $green;
+      img {
+        margin: 0;
+        height: 250%;
+        width: 100%;
+        margin-left: 13px;
+        margin-top: 10px;
+      }
+    }
+    h1 {
+      font-size: 1.3rem;
+    }
   }
 }
