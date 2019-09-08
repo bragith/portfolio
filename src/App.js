@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 import './App.scss';
 import Me from './components/me';
 import Projects from './components/projects';
@@ -11,16 +12,18 @@ import BurgerMenu from './components/BurgerMenu/burgerMenu';
 class App extends Component {
   render() {
     return (
-      <div id="wrapper">
-        {/* <Header /> */}
-        <BurgerMenu />
-        <Frontpage />
-        <Me />
-        <Skills />
-        <Projects />
-        <Contact />
-        <ScrollToTop />
-      </div>
+      <BrowserRouter>
+        <div id="wrapper">
+          {/* <Header /> */}
+          <BurgerMenu />
+          <Frontpage />
+          <Me />
+          <Skills />
+          <Projects />
+          <Contact />
+          <ScrollToTop />
+        </div>
+      </BrowserRouter>
     );
   }
 }

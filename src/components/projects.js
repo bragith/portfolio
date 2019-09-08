@@ -7,14 +7,14 @@ const projects = [
     title: 'Festen.dk',
     img: festenImg,
     tags: ['React.js'],
-    link: 'www.festen.dk',
+    link: 'http://www.festen.dk',
     color: '#619e98'
   },
   {
     title: 'Arabesque',
     img: arabesqueImg,
     tags: ['WordPress'],
-    link: 'www.arabesque.is',
+    link: 'http://www.arabesque.is',
     color: '#df2176'
   }
 ];
