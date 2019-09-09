@@ -1,0 +1,86 @@
+@keyframes spinner {
+  //Making the spinner spin from 0 to 360deg
+  from {
+    -moz-transform: rotateX(0deg);
+    -ms-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+  }
+  to {
+    -moz-transform: rotateX(-360deg);
+    -ms-transform: rotateX(-360deg);
+    transform: rotateX(-360deg);
+  }
+}
+
+#mouse {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em auto;
+  width: 40px;
+  height: 60px;
+  border: 1.5px solid #000;
+  border-radius: 20px;
+  bottom: 0;
+  transition: opacity 0.5s;
+
+  //Set the perspective for a realistic 3d view
+  -webkit-perspective: 1200px;
+  -moz-perspective: 1200px;
+  -ms-perspective: 1200px;
+  perspective: 1200px;
+  &.show {
+    opacity: 1;
+  }
+  &.hide {
+    opacity: 0;
+  }
+}
+
+#scrollWheel {
+  //Setting the animation
+  -webkit-animation-name: spinner;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 3s;
+
+  animation-name: spinner;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+
+  height: 5px;
+  width: 10px;
+  .line {
+    position: absolute;
+    background-color: white;
+    width: 10px;
+    border-bottom: 1.5px solid #000;
+    border-radius: 0.75px;
+
+    //Hiding the back of the lines so that the wheel appears solid and not see through
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}
+
+$deg: 360deg / 10;
+$z: 20px;
+
+@for $i from 1 through 10 {
+  .line:nth-child(#{$i}) {
+    $d: #{$i * $deg};
+    -webkit-transform: rotateX($d) translateZ($z);
+    -moz-transform: rotateX($d) translateZ($z);
+    -ms-transform: rotateX($d) translateZ($z);
+    transform: rotateX($d) translateZ($z);
+  }
+}

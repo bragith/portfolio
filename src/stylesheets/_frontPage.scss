@@ -33,60 +33,6 @@
   }
 }
 
-.scrollDown {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 60px;
-  min-width: 100px;
-  z-index: 99;
-  span {
-    //display: inline-block;
-    height: 3px;
-    width: 60px;
-    background-color: black;
-    border-radius: 1.5px;
-    &:nth-child(1) {
-      transform: rotate(30deg);
-      margin-right: -4.5px;
-    }
-    &:nth-child(2) {
-      transform: rotate(-30deg);
-      margin-left: -4.5px;
-    }
-  }
-  &:hover {
-    -webkit-animation: bounce 2s infinite;
-    animation: bounce 2s infinite;
-    -webkit-transition: all 0.2s ease-in;
-    transition: all 0.2s ease-in;
-    span {
-      color: red;
-    }
-  }
-}
-
-@keyframes bounce {
-  0% {
-    bottom: 30px;
-  }
-  25% {
-    bottom: 50px;
-  }
-  50% {
-    bottom: 30px;
-  }
-  75% {
-    bottom: 40px;
-  }
-  100% {
-    bottom: 30px;
-  }
-}
-
 @include mediaTablet {
   #frontPage {
     .content {

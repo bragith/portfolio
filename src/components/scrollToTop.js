@@ -24,10 +24,8 @@ const ScrollToTop = () => {
 
     // Making sure to clean up the effect
     // by removing the scroll event listener
-    return function cleanup() {
-      window.removeEventListener('scroll', showScrollToTop);
-    };
-  });
+    return () => window.removeEventListener('scroll', showScrollToTop, true);
+  }, []);
 
   return (
     <div id="scrollToTop" ref={toTopButton} onClick={onClick}>

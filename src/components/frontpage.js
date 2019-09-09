@@ -1,6 +1,20 @@
 import React, { useEffect, useRef, useState } from 'react';
 import manImg from '../resources/images/man.png';
+
 const Frontpage = () => {
+  const [showMouse, setShowMouse] = useState(true);
+
+  useEffect(() => {
+    window.addEventListener('scroll', whenScroll);
+
+    //Cleanup
+    return () => window.removeEventListener('scroll', whenScroll);
+  }, []);
+
+  const whenScroll = () => {
+    window.scrollY > 0 ? setShowMouse(false) : setShowMouse(true);
+  };
+
   return (
     <section id="frontPage">
       <div className="content contained">
@@ -15,9 +29,19 @@ const Frontpage = () => {
         <div id="imgContainer">
           <img src={manImg} alt="Me" />
         </div>
-        <div className="scrollDown">
-          <span />
-          <span />
+        <div id="mouse" className={`${showMouse ? 'show' : 'hide'}`}>
+          <div id="scrollWheel">
+            <div className="line" />
+            <div className="line" />
+            <div className="line" />
+            <div className="line" />
+            <div className="line" />
+            <div className="line" />
+            <div className="line" />
+            <div className="line" />
+            <div className="line" />
+            <div className="line" />
+          </div>
         </div>
       </div>
     </section>
