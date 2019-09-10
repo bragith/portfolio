@@ -1,3 +1,4 @@
+// Creating the spinner animation
 @keyframes spinner {
   //Making the spinner spin from 0 to 360deg
   from {
@@ -39,16 +40,16 @@
 }
 
 #scrollWheel {
-  //Setting the animation
+  // Setting the animation
   -webkit-animation-name: spinner;
-  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-out;
   -webkit-animation-iteration-count: infinite;
-  -webkit-animation-duration: 3s;
+  -webkit-animation-duration: 2s;
 
   animation-name: spinner;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: ease-out;
   animation-iteration-count: infinite;
-  animation-duration: 3s;
+  animation-duration: 2s;
 
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
@@ -72,9 +73,14 @@
   }
 }
 
+// finding at what interval the lines should be
+// by deviding 360 by the number of lines
 $deg: 360deg / 10;
+
+// Defines the "size"(radius) of the 3d circle that is spinning
 $z: 20px;
 
+// Aligning all the lines around the circle with an interval of the calculated $deg
 @for $i from 1 through 10 {
   .line:nth-child(#{$i}) {
     $d: #{$i * $deg};
