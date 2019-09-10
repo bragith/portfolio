@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import './App.scss';
 import Me from './components/me';
 import Projects from './components/projects';
@@ -14,7 +14,6 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div id="wrapper">
-          {/* <Header /> */}
           <BurgerMenu />
           <Frontpage />
           <Me />

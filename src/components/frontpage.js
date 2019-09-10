@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import manImg from '../resources/images/man.png';
+import MouseAnimation from './MouseAnimation/mouseAnimation';
 
 const Frontpage = () => {
   const [showMouse, setShowMouse] = useState(true);
@@ -29,20 +30,7 @@ const Frontpage = () => {
         <div id="imgContainer">
           <img src={manImg} alt="Me" />
         </div>
-        <div id="mouse" className={`${showMouse ? 'show' : 'hide'}`}>
-          <div id="scrollWheel">
-            <div className="line" />
-            <div className="line" />
-            <div className="line" />
-            <div className="line" />
-            <div className="line" />
-            <div className="line" />
-            <div className="line" />
-            <div className="line" />
-            <div className="line" />
-            <div className="line" />
-          </div>
-        </div>
+        <MouseAnimation show={showMouse} />
       </div>
     </section>
   );

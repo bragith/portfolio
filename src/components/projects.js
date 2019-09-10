@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import festenImg from '../resources/images/festen-logo.svg';
 import arabesqueImg from '../resources/images/arabesque-logo.jpg';
 

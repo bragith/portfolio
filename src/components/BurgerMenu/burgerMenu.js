@@ -1,8 +1,7 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './burgerMenu.scss';
 
 //Burger menu with icon that animates to x when opened and back to burger when closed
-
 const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 

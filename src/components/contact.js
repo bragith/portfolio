@@ -1,7 +1,4 @@
-import React, { useRef } from 'react';
-import mailBlackIcon from '../resources/icons/mail-black.svg';
-import mailWhiteIcon from '../resources/icons/mail-white.svg';
-import mailGreenIcon from '../resources/icons/mail-green.svg';
+import React from 'react';
 
 const Contact = () => {
   return (

@@ -1,32 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const Skills = () => {
-  const skillSets = [
-    {
-      title: 'HTML(5)',
-      elements: ['Semantic Markup']
-    },
-    {
-      title: 'CSS(3)',
-      elements: ['Animations', 'Sass', 'Less', 'Bootstrap', 'Foundation']
-    },
-    {
-      title: 'JavaScript(ES6)',
-      elements: ['React', 'jQuery', 'Redux', 'Knockout', 'NPM']
-    },
-    {
-      title: 'Tools',
-      elements: ['Visual Studio Code', 'Git', 'Gulp', 'Grunt', 'WordPress']
-    },
-    {
-      title: 'Backend',
-      elements: ['SQL', 'Relational Databases']
-    },
-    {
-      title: 'Design',
-      elements: ['UX', 'Design Theory', 'Photoshop', 'Illustrator', 'Indesign']
-    }
-  ];
   const skillSet1 = [
     {
       title: 'HTML (5)',
@@ -57,17 +31,34 @@ const Skills = () => {
     }
   ];
 
-  const skillSet3 = [];
+  const [isVisible, setVisible] = React.useState(false);
+  const domRef = React.useRef(null);
+
+  const showContent = entries => {
+    if (!isVisible) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+        }
+      });
+    }
+  };
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(showContent, { threshold: 0.6 });
+    observer.observe(domRef.current);
+    return () => observer.unobserve(domRef.current);
+  }, []);
 
   return (
-    <section id="skills">
+    <section ref={domRef} id="skills">
       <div className="content contained">
         <h1>Skillset</h1>
         <div className="skillSetWrapper">
-          <div className="right">
+          <div className={`right ${isVisible ? 'show' : 'hide'}`}>
             <SkillCategorie categorie={skillSet1} />
           </div>
-          <div className="left">
+          <div className={`left ${isVisible ? 'show' : 'hide'}`}>
             <SkillCategorie categorie={skillSet2} />
           </div>
         </div>
@@ -77,7 +68,6 @@ const Skills = () => {
 };
 
 const SkillCategorie = ({ categorie }) => {
-  console.log(categorie);
   return categorie.map((categorie, i) => (
     <div key={i} className="skillCategory">
       <h3 className="skillTitle">{categorie.title}</h3>
