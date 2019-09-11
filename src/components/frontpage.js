@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import manImg from '../resources/images/man.png';
+import bragiImg from '../resources/images/portrait.png';
 import MouseAnimation from './MouseAnimation/mouseAnimation';
 
 const Frontpage = () => {
@@ -28,7 +29,7 @@ const Frontpage = () => {
           </h1>
         </header>
         <div id="imgContainer">
-          <img src={manImg} alt="Me" />
+          <img src={bragiImg} alt="Me" />
         </div>
         <MouseAnimation show={showMouse} />
       </div>

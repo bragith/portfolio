@@ -1,6 +1,7 @@
 import React from 'react';
 import festenImg from '../resources/images/festen-logo.svg';
 import arabesqueImg from '../resources/images/arabesque-logo.jpg';
+import arabesqueSvg from '../resources/images/arabesque.svg';
 
 const projects = [
   {
@@ -12,7 +13,7 @@ const projects = [
   },
   {
     title: 'Arabesque',
-    img: arabesqueImg,
+    img: arabesqueSvg,
     tags: ['WordPress'],
     link: 'http://www.arabesque.is',
     color: '#df2176'
