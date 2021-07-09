@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.scss';
-import Me from './components/me';
-import Projects from './components/projects';
-import Skills from './components/skills';
-import Contact from './components/contact';
 import Frontpage from './components/frontpage';
-import ScrollToTop from './components/scrollToTop';
 import BurgerMenu from './components/BurgerMenu/burgerMenu';
+import Project from './components/Project/project';
 
 class App extends Component {
   render() {
@@ -15,12 +11,14 @@ class App extends Component {
       <BrowserRouter>
         <div id="wrapper">
           <BurgerMenu />
-          <Frontpage />
-          <Me />
-          <Skills />
-          <Projects />
-          <Contact />
-          <ScrollToTop />
+          <Switch>
+            <Route exact path="/">
+              <Frontpage />
+            </Route>
+            <Route path="/projects/:project">
+              <Project />
+            </Route>
+          </Switch>
         </div>
       </BrowserRouter>
     );

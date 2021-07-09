@@ -1,0 +1,24 @@
+@import '../../stylesheets/settings';
+
+#project {
+  .skewedContainer {
+    height: 700px;
+    width: 100vw;
+    transform: skewY(-10deg);
+    overflow: hidden;
+    border-bottom: thick solid $green;
+    background-color: red;
+    margin-top: -10%;
+    .counterSkew {
+      transform: skewY(10deg);
+      margin-top: 10%;
+      img {
+        height: 400px;
+        width: auto;
+      }
+    }
+  }
+  .stuff {
+    height: 1000px;
+  }
+}

@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import festenImg from '../resources/images/festen-logo.svg';
 import arabesqueImg from '../resources/images/arabesque-logo.jpg';
 import arabesqueSvg from '../resources/images/arabesque.svg';
@@ -8,14 +10,14 @@ const projects = [
     title: 'Festen.dk',
     img: festenImg,
     tags: ['React.js'],
-    link: 'http://www.festen.dk',
+    project: 'festen',
     color: '#619e98'
   },
   {
     title: 'Arabesque',
     img: arabesqueSvg,
     tags: ['WordPress'],
-    link: 'http://www.arabesque.is',
+    project: 'arabesque',
     color: '#df2176'
   }
 ];
@@ -35,7 +37,7 @@ const Projects = () => {
   );
 };
 
-const Project = ({ project: { title, img, tags, link, color } }) => {
+const Project = ({ project: { title, img, tags, project, color } }) => {
   return (
     <figure className="project" style={{ backgroundColor: `${color}` }}>
       <img src={img} alt={title} />
@@ -46,9 +48,12 @@ const Project = ({ project: { title, img, tags, link, color } }) => {
             <li key={i}>{tag}</li>
           ))}
         </ul>
-        <a className="button" href={link}>
+        <Link className="button" to={`/projects/${project}`}>
+          Show more
+        </Link>
+        {/* <a className="button" href={link} target="_blank">
           Visit Website >
-        </a>
+        </a> */}
       </figcaption>
     </figure>
   );
